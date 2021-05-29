@@ -8,7 +8,7 @@ public class Main {
 		
 		int option;
 		
-		Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);  //Pre-Define Class
 		
 		StorageRentalBusiness srb = new StorageRentalBusiness("Tan Storage Rental Company");
 		
@@ -31,7 +31,7 @@ public class Main {
 			product.setPrice(30);
 			product.setStorageSize(65);
 			
-			System.out.println("Location \t: "+product.getLocation());
+			System.out.println("\nLocation \t: "+product.getLocation());
 			System.out.println("Price \t\t: RM"+product.getPrice()+" per square feet");
 			System.out.println("Storage Size \t: "+product.getStorageSize()+" square feet");
 		}

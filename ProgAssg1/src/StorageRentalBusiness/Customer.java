@@ -12,7 +12,7 @@ public class Customer {
 	private double time;
 	private int quantity;
 	
-	Scanner in = new Scanner(System.in);
+	Scanner in = new Scanner(System.in);  //Pre-Define Class
 	
 	public Customer() {  //constructor with no argument
 		System.out.print("Please enter customer's name :");

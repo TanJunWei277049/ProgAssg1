@@ -9,9 +9,9 @@ public class Employee {
 	private int employPhoneNum;
 	private String employAddress;
 	
-	Scanner in = new Scanner(System.in);
+	Scanner in = new Scanner(System.in);  //Pre-Define Class
 	
-	public Employee() {  //constructor with 0 argument
+	public Employee() {  //constructor with no argument
 		System.out.print("Please enter employee's name: ");
 		this.employName = in.next();
 		System.out.print("Please enter employee's age: ");
