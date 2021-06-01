@@ -7,10 +7,7 @@ public class Customer {
 	private String custName;
 	private int age;
 	private int custPhoneNum;
-	private String address;
-	private String rentDate;
-	private double time;
-	private int quantity;
+	private char gender;
 	
 	Scanner in = new Scanner(System.in);  //Pre-Define Class
 	
@@ -21,25 +18,16 @@ public class Customer {
 		this.age = in.nextInt();
 		System.out.print("Please enter customer's phone number :");
 		this.custPhoneNum = in.nextInt();
-		System.out.print("Please enter customer's address :");
-		this.address = in.nextLine();
-		in.nextLine();
-		System.out.print("Please enter customer's rent date :");
-		this.rentDate = in.next();
-		System.out.print("Please enter customer's rent time :");
-		this.time = in.nextDouble();
-		System.out.print("Please enter customer's rent quantity :");
-		this.quantity = in.nextInt();
+		System.out.print("Please enter customer's gender (m/f):");
+		this.gender = in.next().charAt(0);
 	}
 	
 	public void printInfo() {
-		System.out.println("\nCustomer's name :"+this.custName+
-							"\nCustomer's age :"+this.age+
-							"\nCustomer's phone number :"+this.custPhoneNum+
-							"\nCustomer's address :"+this.address+
-							"\nCustomer's rent date :"+this.rentDate+
-							"\nCustomer's rent time :"+this.time+
-							"\nCustomer's rent quantity :"+this.quantity);
+		System.out.println("\n-------Customer's Details-------");
+		System.out.println("Customer's name :"+this.custName);
+		System.out.println("Customer's age :"+this.age);
+		System.out.println("Customer's phone number :"+this.custPhoneNum);
+		System.out.println("Customer's gender :"+this.gender);
 	}
 
 }

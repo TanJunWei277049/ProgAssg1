@@ -1,48 +1,146 @@
 package StorageRentalBusiness;
 
+import java.util.Scanner;
+
 public class Sales {
 	
-	private double price;
-	private double storageSize;
+	Scanner in = new Scanner(System.in);
 	
-	public Sales(double p, double s) {  //constructor with 2 arguments
-		this.price = p;
-		this.storageSize = s;
+	private String storageType;
+	private double price;
+	private String storageSize;
+	private int storageOpt;
+	private double squareFeet;
+	
+	public Sales(int storageOpt, String size) {  //constructor with 2 arguments
+		this.storageOpt = storageOpt;
+		this.storageSize = size;
 		
-		if(storageSize<=30) {
-			totalPrice();
-			System.out.println("Storage size :"+storageSize+" square feet");
-			System.out.println("Price per square feet :RM"+price);
-			System.out.println("Total price :"+totalPrice());
+		System.out.print("Enter how much square feet you want to rent: ");
+		squareFeet = in.nextDouble();
+		
+		if(storageOpt == 1) {
+			storageType = "Normal Storage";
+			price = 90;
+			
+			if(storageSize.equals("small")) {
+				totalPrice();
+				System.out.println("\n-------Storage Rent-------");
+				System.out.println("Storage Type\t\t:"+storageType);
+				System.out.println("Storage Size\t\t:"+storageSize);
+				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Price per square feet\t:RM"+price);
+				System.out.println("Total price\t\t:RM"+totalPrice());
+			}
+			else if(storageSize.equals("medium")) {
+				double newPrice = 85;
+				totalPrice(newPrice);
+				System.out.println("\n-------Storage Rent-------");
+				System.out.println("Storage Type\t\t:"+storageType);
+				System.out.println("Storage Size\t\t:"+storageSize);
+				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Price per square feet\t:RM"+newPrice);
+				System.out.println("Total price\t\t:RM"+totalPrice(newPrice));
+			}
+			else {
+				double newPrice = 82;
+				double discount = 0.1;
+				totalPrice(newPrice,discount);
+				System.out.println("\n-------Storage Rent-------");
+				System.out.println("Storage Type\t\t:"+storageType);
+				System.out.println("Storage Size\t\t:"+storageSize);
+				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Price per square feet\t:RM"+newPrice);
+				System.out.println("Discount\t\t:"+(discount*100)+"%");
+				System.out.println("Total price\t\t:RM"+totalPrice(newPrice,discount));
+			}
 		}
-		else if(storageSize>30 && storageSize<=70) {
-			double newPrice = 25;
-			totalPrice(newPrice);
-			System.out.println("Storage size :"+storageSize+" square feet");
-			System.out.println("Price per square feet :RM"+newPrice);
-			System.out.println("Total price :"+totalPrice(newPrice));
+		else if(storageOpt == 2) {
+			storageType = "Storage with Freezer";
+			price = 200;
+			
+			if(storageSize.equals("small")) {
+				totalPrice();
+				System.out.println("\n-------Storage Rent-------");
+				System.out.println("Storage Type\t\t:"+storageType);
+				System.out.println("Storage Size\t\t:"+storageSize);
+				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Price per square feet\t:RM"+price);
+				System.out.println("Total price\t\t:RM"+totalPrice());
+			}
+			else if(storageSize.equals("medium")) {
+				double newPrice = 190;
+				totalPrice(newPrice);
+				System.out.println("\n-------Storage Rent-------");
+				System.out.println("Storage Type\t\t:"+storageType);
+				System.out.println("Storage Size\t\t:"+storageSize);
+				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Price per square feet\t:RM"+newPrice);
+				System.out.println("Total price\t\t:RM"+totalPrice(newPrice));
+			}
+			else {
+				double newPrice = 180;
+				double discount = 0.1;
+				totalPrice(newPrice,discount);
+				System.out.println("\n-------Storage Rent-------");
+				System.out.println("Storage Type\t\t:"+storageType);
+				System.out.println("Storage Size\t\t:"+storageSize);
+				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Price per square feet\t:RM"+newPrice);
+				System.out.println("Discount\t\t:"+(discount*100)+"%");
+				System.out.println("Total price\t\t:RM"+totalPrice(newPrice,discount));
+			}
 		}
 		else {
-			double newPrice = 22;
-			double discount = 0.15;
-			totalPrice(newPrice,discount);
-			System.out.println("Storage size :"+storageSize+" square feet");
-			System.out.println("Price per square feet :RM"+newPrice);
-			System.out.println("Discount :"+(discount*100)+"%");
-			System.out.println("Total price :"+totalPrice(newPrice,discount));
+			storageType = "Double Storey Storage";
+			price = 130;
+			
+			if(storageSize.equals("small")) {
+				totalPrice();
+				System.out.println("\n-------Storage Rent-------");
+				System.out.println("Storage Type\t\t:"+storageType);
+				System.out.println("Storage Size\t\t:"+storageSize);
+				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Price per square feet\t:RM"+price);
+				System.out.println("Total price\t\t:RM"+totalPrice());
+			}
+			else if(storageSize.equals("medium")) {
+				double newPrice = 120;
+				totalPrice(newPrice);
+				System.out.println("\n-------Storage Rent-------");
+				System.out.println("Storage Type\t\t:"+storageType);
+				System.out.println("Storage Size\t\t:"+storageSize);
+				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Price per square feet\t:RM"+newPrice);
+				System.out.println("Total price\t\t:RM"+totalPrice(newPrice));
+			}
+			else {
+				double newPrice = 110;
+				double discount = 0.1;
+				totalPrice(newPrice,discount);
+				System.out.println("\n-------Storage Rent-------");
+				System.out.println("Storage Type\t\t:"+storageType);
+				System.out.println("Storage Size\t\t:"+storageSize);
+				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Price per square feet\t:RM"+newPrice);
+				System.out.println("Discount\t\t:"+(discount*100)+"%");
+				System.out.println("Total price\t\t:RM"+totalPrice(newPrice,discount));
+			}
 		}
+		System.out.println("\nThank you. Please Come Again.");
+		
 	}
 	
 	public double totalPrice() {
-		return this.price*this.storageSize;
+		return this.price*squareFeet;
 	}
 	
 	public double totalPrice(double newPrice) {
-		return newPrice*this.storageSize;
+		return newPrice*squareFeet;
 	}
 	
 	public double totalPrice(double newPrice, double discount) {
-		return (newPrice*this.storageSize)*(1-discount);
+		return (newPrice*squareFeet)*(1-discount);
 	}
 
 }

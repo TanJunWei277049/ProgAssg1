@@ -3,60 +3,87 @@ package StorageRentalBusiness;
 import java.util.Scanner;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 		
-		int option;
+		Scanner input = new Scanner(System.in);
 		
-		Scanner in = new Scanner(System.in);  //Pre-Define Class
+		int choose;
 		
-		StorageRentalBusiness srb = new StorageRentalBusiness("Tan Storage Rental Company");
+		StorageRentalCentre src = new StorageRentalCentre("LUCKY","Jalan Besar, Taman Gembira",32500008,"www.luckystoragerental.com");
+		src.printInfo();
 		
-		srb.setBusinessTime("10 a.m. to 5 p.m.");
-		srb.setPhoneNum(32501032);
+		System.out.println("\nChoose your option:-");
+		System.out.println("1-Admin");
+		System.out.println("2-Customer");
 		
-		System.out.println("----------Welcome To "+srb.getCompanyName()+"----------");
-		System.out.println("Business hour\t :"+srb.getBusinessTime());
-		System.out.println("Please contact\t :"+srb.getPhoneNum());
-		
-		System.out.println("\nYou can choose from the following option:-");
-		System.out.println("\n1. Product Description \n2. Storage Sales Price \n3. Customer \n4. Financial Report \n5. Advertisement \n6. Employee \n");
-		
-		System.out.print("Please enter your option: ");
-		option = in.nextInt();
-		
-		if(option == 1) {
-			ProductDescription product = new ProductDescription();
-			product.setLocation("Klang");
-			product.setPrice(30);
-			product.setStorageSize(65);
+		do {
+			System.out.print("\nEnter option: ");
+			int option = input.nextInt();
 			
-			System.out.println("\nLocation \t: "+product.getLocation());
-			System.out.println("Price \t\t: RM"+product.getPrice()+" per square feet");
-			System.out.println("Storage Size \t: "+product.getStorageSize()+" square feet");
-		}
-		else if(option == 2) {
-			Sales s = new Sales(30,65);
-		}
-		else if(option == 3) {
-			Customer c = new Customer();
-			c.printInfo();
-		}
-		else if(option == 4) {
-			Finance f = new Finance(20000,2000,3500,1000,1000);
-			System.out.println("\nTotal Expenses\t: Rm"+f.calTotalExpenses());
-			System.out.println("Total Net Income: RM"+f.netIncome());
-		}
-		else if(option == 5) {
-			Marketing m = new Marketing();
-			System.out.println();
-			m.printAdvertisement();
-		}
-		else {
-			Employee e = new Employee();
-			e.printInfo();
-		}
-
+			if(option == 1) {
+				System.out.println("\nWELCOME BACK ADMIN");
+				System.out.println("Please choose your option :-");
+				System.out.println("1. Financial Report");
+				System.out.println("2. Employee");
+				System.out.print("\nEnter option: ");
+				int adminOption = input.nextInt();
+				
+				if(adminOption == 1) {
+					Finance finance = new Finance(10000,2000,3500,200,1400);
+					System.out.println("\n-------Financial report-------");
+					System.out.println("Total Income\t:"+finance.getIncome());
+					System.out.println("Total Expenses\t:"+finance.totalExpenses());
+					System.out.println("Total Profit\t:"+finance.netProfit());
+				}
+				else {
+					Employee employee = new Employee();
+					
+				}
+				
+			}
+			else {
+				System.out.println();
+				AdvertisementAndMarketing ads = new AdvertisementAndMarketing();
+				ads.printAdvertisement();
+				
+				System.out.println("\nWhat do you want to do:-");
+				System.out.println("1. Product Description");
+				System.out.println("2. Rent A Storage");
+				System.out.print("\nPlease Enter Your Option: ");
+				int customerOpt = input.nextInt();
+				
+				if(customerOpt == 1) {
+					System.out.println("\nWhich storage are you interested in ?");
+					System.out.println("1. Normal Storage");
+					System.out.println("2. Storage with Freezer");
+					System.out.println("3. Double Storey Storage");
+					System.out.print("Enter your option: ");
+					int storageOpt = input.nextInt();
+					
+					StorageType storage = new StorageType(storageOpt);
+					
+				}
+				else {
+					Customer customer = new Customer();
+					customer.printInfo();
+					
+					System.out.println("\nSelect the storage you want to rent: ");
+					System.out.println("1. Normal Storage");
+					System.out.println("2. Storage with Freezer");
+					System.out.println("3. Double Storey Storage");
+					System.out.print("Enter your option: ");
+					int storageOpt = input.nextInt();
+					System.out.print("Enter the size(small/medium/large): ");
+					String size = input.next();
+					
+					Sales sale = new Sales(storageOpt,size);
+				}
+			}
+		System.out.print("\nDo you want to continue?(1-Yes  2-No)");
+		choose = input.nextInt();
+			
+		}while(choose == 1);
 	}
 
 }
