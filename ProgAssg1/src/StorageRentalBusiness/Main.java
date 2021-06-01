@@ -84,6 +84,6 @@ public class Main {
 		choose = input.nextInt();
 			
 		}while(choose == 1);
-	}
+	}  //end main
 
-}
+}  // end class 

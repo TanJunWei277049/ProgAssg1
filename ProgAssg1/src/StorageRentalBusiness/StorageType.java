@@ -1,6 +1,6 @@
 package StorageRentalBusiness;
 
-public class StorageType {
+public class StorageType {  //User Define Class
 	
 	private int storageOpt;
 	

@@ -1,6 +1,6 @@
 package StorageRentalBusiness;
 
-public class AdvertisementAndMarketing {
+public class AdvertisementAndMarketing {  //User Define Class
 	
 	public void printAdvertisement() {
 		System.out.println("Promotion!!!\nPromotion!!!\nGet to rent a storage with the lowest price now!!!");

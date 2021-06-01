@@ -1,6 +1,6 @@
 package StorageRentalBusiness;
 
-public class Finance {
+public class Finance {  //User Define Class
 
 	private double income;
 	private double employSalary;

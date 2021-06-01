@@ -1,13 +1,13 @@
 package StorageRentalBusiness;
 
-public class StorageRentalCentre {
+public class StorageRentalCentre {  //User Define Class
 	
 	private String companyName;
 	private String companyAdd;
 	private int phoneNum;
 	private String website;
 	
-	public StorageRentalCentre(String companyName, String companyAdd, int phoneNum, String website) {
+	public StorageRentalCentre(String companyName, String companyAdd, int phoneNum, String website) {  //constructor with 4 arguments
 		this.companyName = companyName;
 		this.companyAdd = companyAdd;
 		this.phoneNum = phoneNum;

@@ -2,9 +2,9 @@ package StorageRentalBusiness;
 
 import java.util.Scanner;
 
-public class Sales {
+public class Sales {  //User Define Class
 	
-	Scanner in = new Scanner(System.in);
+	Scanner in = new Scanner(System.in);  //Pre-Define class
 	
 	private String storageType;
 	private double price;

@@ -2,7 +2,7 @@ package StorageRentalBusiness;
 
 import java.util.Scanner;
 
-public class Customer {
+public class Customer {  //User Define Class
 	
 	private String custName;
 	private int age;
