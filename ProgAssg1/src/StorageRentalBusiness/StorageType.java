@@ -2,14 +2,14 @@ package StorageRentalBusiness;
 
 public class StorageType {  //User Define Class
 	
-	private int storageOpt;
+	private int storageType;
 	
-	public StorageType(int storageOpt) {  //constructor with 1 argument
-		this.storageOpt = storageOpt;
+	public StorageType(int storageType) {  //constructor with 1 argument
+		this.storageType = storageType;
 		
-		if(storageOpt == 1)
+		if(this.storageType == 1)
 			printInfoNormalStorage();
-		else if(storageOpt == 2)
+		else if(this.storageType == 2)
 			printInfoFreezerStorage();
 		else
 			printInfoDoubleStoreyStorage();

@@ -13,11 +13,10 @@ public class Main {
 		StorageRentalCentre src = new StorageRentalCentre("LUCKY","Jalan Besar, Taman Gembira",32500008,"www.luckystoragerental.com");
 		src.printInfo();
 		
-		System.out.println("\nChoose your option:-");
-		System.out.println("1-Admin");
-		System.out.println("2-Customer");
-		
 		do {
+			System.out.println("\nChoose your option:-");
+			System.out.println("1-Admin");
+			System.out.println("2-Customer");
 			System.out.print("\nEnter option: ");
 			int option = input.nextInt();
 			
@@ -59,9 +58,9 @@ public class Main {
 					System.out.println("2. Storage with Freezer");
 					System.out.println("3. Double Storey Storage");
 					System.out.print("Enter your option: ");
-					int storageOpt = input.nextInt();
+					int storageType = input.nextInt();
 					
-					StorageType storage = new StorageType(storageOpt);
+					StorageType storage = new StorageType(storageType);
 					
 				}
 				else {
@@ -74,8 +73,8 @@ public class Main {
 					System.out.println("3. Double Storey Storage");
 					System.out.print("Enter your option: ");
 					int storageOpt = input.nextInt();
-					System.out.print("Enter the size(small/medium/large): ");
-					String size = input.next();
+					System.out.print("Enter the size(in square feet): ");
+					double size = input.nextDouble();
 					
 					Sales sale = new Sales(storageOpt,size);
 				}

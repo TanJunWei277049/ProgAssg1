@@ -1,44 +1,34 @@
 package StorageRentalBusiness;
 
-import java.util.Scanner;
-
 public class Sales {  //User Define Class
-	
-	Scanner in = new Scanner(System.in);  //Pre-Define class
 	
 	private String storageType;
 	private double price;
-	private String storageSize;
+	private double storageSize;
 	private int storageOpt;
-	private double squareFeet;
 	
-	public Sales(int storageOpt, String size) {  //constructor with 2 arguments
+	public Sales(int storageOpt, double size) {  //constructor with 2 arguments
 		this.storageOpt = storageOpt;
 		this.storageSize = size;
-		
-		System.out.print("Enter how much square feet you want to rent: ");
-		squareFeet = in.nextDouble();
 		
 		if(storageOpt == 1) {
 			storageType = "Normal Storage";
 			price = 90;
 			
-			if(storageSize.equals("small")) {
+			if(storageSize<=30) {
 				totalPrice();
 				System.out.println("\n-------Storage Rent-------");
 				System.out.println("Storage Type\t\t:"+storageType);
-				System.out.println("Storage Size\t\t:"+storageSize);
-				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Storage Size\t\t:"+storageSize+" square feet");
 				System.out.println("Price per square feet\t:RM"+price);
 				System.out.println("Total price\t\t:RM"+totalPrice());
 			}
-			else if(storageSize.equals("medium")) {
+			else if(storageSize>30 && storageSize<=70) {
 				double newPrice = 85;
 				totalPrice(newPrice);
 				System.out.println("\n-------Storage Rent-------");
 				System.out.println("Storage Type\t\t:"+storageType);
-				System.out.println("Storage Size\t\t:"+storageSize);
-				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Storage Size\t\t:"+storageSize+" square feet");
 				System.out.println("Price per square feet\t:RM"+newPrice);
 				System.out.println("Total price\t\t:RM"+totalPrice(newPrice));
 			}
@@ -48,8 +38,7 @@ public class Sales {  //User Define Class
 				totalPrice(newPrice,discount);
 				System.out.println("\n-------Storage Rent-------");
 				System.out.println("Storage Type\t\t:"+storageType);
-				System.out.println("Storage Size\t\t:"+storageSize);
-				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Storage Size\t\t:"+storageSize+" square feet");
 				System.out.println("Price per square feet\t:RM"+newPrice);
 				System.out.println("Discount\t\t:"+(discount*100)+"%");
 				System.out.println("Total price\t\t:RM"+totalPrice(newPrice,discount));
@@ -59,22 +48,20 @@ public class Sales {  //User Define Class
 			storageType = "Storage with Freezer";
 			price = 200;
 			
-			if(storageSize.equals("small")) {
+			if(storageSize<=30) {
 				totalPrice();
 				System.out.println("\n-------Storage Rent-------");
 				System.out.println("Storage Type\t\t:"+storageType);
-				System.out.println("Storage Size\t\t:"+storageSize);
-				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Storage Size\t\t:"+storageSize+" square feet");
 				System.out.println("Price per square feet\t:RM"+price);
 				System.out.println("Total price\t\t:RM"+totalPrice());
 			}
-			else if(storageSize.equals("medium")) {
+			else if(storageSize>30 && storageSize<=70) {
 				double newPrice = 190;
 				totalPrice(newPrice);
 				System.out.println("\n-------Storage Rent-------");
 				System.out.println("Storage Type\t\t:"+storageType);
-				System.out.println("Storage Size\t\t:"+storageSize);
-				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Storage Size\t\t:"+storageSize+" square feet");
 				System.out.println("Price per square feet\t:RM"+newPrice);
 				System.out.println("Total price\t\t:RM"+totalPrice(newPrice));
 			}
@@ -84,8 +71,7 @@ public class Sales {  //User Define Class
 				totalPrice(newPrice,discount);
 				System.out.println("\n-------Storage Rent-------");
 				System.out.println("Storage Type\t\t:"+storageType);
-				System.out.println("Storage Size\t\t:"+storageSize);
-				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Storage Size\t\t:"+storageSize+" square feet");
 				System.out.println("Price per square feet\t:RM"+newPrice);
 				System.out.println("Discount\t\t:"+(discount*100)+"%");
 				System.out.println("Total price\t\t:RM"+totalPrice(newPrice,discount));
@@ -95,22 +81,20 @@ public class Sales {  //User Define Class
 			storageType = "Double Storey Storage";
 			price = 130;
 			
-			if(storageSize.equals("small")) {
+			if(storageSize<=30) {
 				totalPrice();
 				System.out.println("\n-------Storage Rent-------");
 				System.out.println("Storage Type\t\t:"+storageType);
-				System.out.println("Storage Size\t\t:"+storageSize);
-				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Storage Size\t\t:"+storageSize+" square feet");
 				System.out.println("Price per square feet\t:RM"+price);
 				System.out.println("Total price\t\t:RM"+totalPrice());
 			}
-			else if(storageSize.equals("medium")) {
+			else if(storageSize>30 && storageSize<=70) {
 				double newPrice = 120;
 				totalPrice(newPrice);
 				System.out.println("\n-------Storage Rent-------");
 				System.out.println("Storage Type\t\t:"+storageType);
-				System.out.println("Storage Size\t\t:"+storageSize);
-				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Storage Size\t\t:"+storageSize+" square feet");
 				System.out.println("Price per square feet\t:RM"+newPrice);
 				System.out.println("Total price\t\t:RM"+totalPrice(newPrice));
 			}
@@ -120,8 +104,7 @@ public class Sales {  //User Define Class
 				totalPrice(newPrice,discount);
 				System.out.println("\n-------Storage Rent-------");
 				System.out.println("Storage Type\t\t:"+storageType);
-				System.out.println("Storage Size\t\t:"+storageSize);
-				System.out.println("Square Feet\t\t:"+squareFeet);
+				System.out.println("Storage Size\t\t:"+storageSize+" square feet");
 				System.out.println("Price per square feet\t:RM"+newPrice);
 				System.out.println("Discount\t\t:"+(discount*100)+"%");
 				System.out.println("Total price\t\t:RM"+totalPrice(newPrice,discount));
@@ -132,15 +115,15 @@ public class Sales {  //User Define Class
 	}
 	
 	public double totalPrice() {
-		return this.price*squareFeet;
+		return this.price*storageSize;
 	}
 	
 	public double totalPrice(double newPrice) {
-		return newPrice*squareFeet;
+		return newPrice*storageSize;
 	}
 	
 	public double totalPrice(double newPrice, double discount) {
-		return (newPrice*squareFeet)*(1-discount);
+		return (newPrice*storageSize)*(1-discount);
 	}
 
 }
